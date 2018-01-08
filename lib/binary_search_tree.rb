@@ -106,6 +106,11 @@ class BinarySearchTree
     maximum(tree_node.right)
   end
 
+  def one_before_max(tree_node = @root)
+    return treenode if tree_node.right.right.nil?
+    one_before_max(tree_node.right)
+  end
+
   def depth(tree_node = @root)
     return 0 if tree_node.nil? || (tree_node.left.nil? && tree_node.right.nil?)
     total = 1
